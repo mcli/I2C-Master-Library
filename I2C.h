@@ -1,6 +1,8 @@
 /*
   I2C.h   - I2C library
   Copyright (c) 2011-2012 Wayne Truchsess.  All right reserved.
+  Rev 5.1 - 11/25/2015 MCL changes
+          - refactor scan() to use ping() function with return values
   Rev 5.0 - January 24th, 2012
           - Removed the use of interrupts completely from the library
             so TWI state changes are now polled. 
