@@ -96,7 +96,23 @@ class I2C
     void timeOut(uint16_t);
     void setSpeed(uint8_t); 
     void pullup(uint8_t);
-    void scan();
+    /**
+     * Scan all addresses from 0 to 0x7F
+     *
+     * @return number of devices that responded
+     **/
+    uint8_t scan();
+    
+    /**
+     * Scan addresses from min to max
+     * @return number of devices that responded
+     **/
+    uint8_t scan(uint8_t min, uint8_t max);
+    /**
+     * Ping the given address to see if it is alive
+     * @return 1 if found, 0 if no response, -1 if error
+     **/
+    int ping(uint8_t addr);
     uint8_t available();
     uint8_t receive();
     uint8_t write(uint8_t, uint8_t);
